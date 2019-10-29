@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 // Make a array called with a variable topics
 // Attach the GIF source 
 // Ajax call the specific object
@@ -22,28 +23,36 @@ $(document).ready(function(){
 
     var topics = ["spinach", "carrot", "apple", "peppers", "brocilli", "peaches", "potatoes", "onion", "lime", "lemon", "letucce", "cilantro", "cabbage"];
     
-    function displayGif(){
+    function displayGif(){  
+        //event.preventDefault();
         var object= $(this).attr("data-object");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + object +"&limit=10&api_key=lWEJ1fgqWyR2Aj8W27Ojvzxt2i6OApp5";
 
         $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function(response){
+        url: queryURL,
+        method: "GET"
+        }).then(function(response) {
+        console.log(queryURL);
+        console.log(response);
+        $("#gif-view").empty();
+        
         var results = response.data;
-    
-        for (var i = 0; i < results.length; i++){
+        
+        for (var i = 0; i < results.length; i++){ 
             var gifDiv = $("<div>");
-            var p = $("<p>").text("Rating: " + results[i].rating)
-            gifDiv.append(p);
+            var p = $("<p>").text("Rating: " + results[i].rating);
             
             var gifImage = $("<img>");
+            gifImage.attr("src", results[i].images.fixed_height.url);
 
+            gifDiv.append(gifImage);
+            gifDiv.append(p);
 
+            $("#gif-view").prepend(gifDiv);
         }
-
+        
         });
-        }
+    };
 
         function createButtons(){
             $("#button-view").empty();
@@ -56,14 +65,11 @@ $(document).ready(function(){
             $("#button-view").append(newButton);
             }
         }
-
-      
-
     
+
     $(document).on("click", ".btn", displayGif);
-    //$("#gif-view").prepend(gifDiv); 
-    
     createButtons();
+
 });
 
 
