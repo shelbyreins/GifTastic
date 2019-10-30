@@ -21,7 +21,7 @@ $(document).ready(function(){
 
    
 
-    var topics = ["spinach", "carrot", "apple", "peppers", "brocilli", "peaches", "potatoes", "onion", "lime", "lemon", "letucce", "cilantro", "cabbage"];
+    var topics = ["spinach", "carrot", "apple", "peppers", "broccoli", "peaches", "potatoes", "onion", "lime", "lemon", "letucce", "cilantro", "cabbage"];
     
     function displayGif(){  
         //event.preventDefault();
@@ -32,10 +32,10 @@ $(document).ready(function(){
         url: queryURL,
         method: "GET"
         }).then(function(response) {
-        console.log(queryURL);
+       
         console.log(response);
         $("#gif-view").empty();
-        
+        console.log(queryURL);
         var results = response.data;
         
         for (var i = 0; i < results.length; i++){ 
@@ -43,13 +43,36 @@ $(document).ready(function(){
             var p = $("<p>").text("Rating: " + results[i].rating);
             
             var gifImage = $("<img>");
-            gifImage.attr("src", results[i].images.fixed_height.url);
-
+            gifImage.attr({
+                "src": results[i].images.fixed_height_still.url,
+                "data-still": results[i].images.fixed_height_still.url,
+                "data-animate": results[i].images.fixed_height.url,
+                "data-state": "still",
+                "class": "gifImage",
+            });
+            
             gifDiv.append(gifImage);
             gifDiv.append(p);
 
             $("#gif-view").prepend(gifDiv);
-        }
+            }
+
+             $(".gifImage").on("click",function(){
+        
+            var gifState = $(this).attr("data-state")
+
+            if(gifState === "still"){
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            }else{
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+            }
+            console.log(this);
+            });
+            
+
+        
         
         });
     };
