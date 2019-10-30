@@ -86,7 +86,13 @@ $(document).ready(function(){
             $("#button-view").append(newButton);
             }
         }
-    
+        
+        $("#add-gif").on("click", function(event){
+            event.preventDefault();
+            var object = $("#gif-input").val().trim();
+            topics.push(object);
+            createButtons();
+        })
 
     $(document).on("click", ".btn", displayGif);
     createButtons();
