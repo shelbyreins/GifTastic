@@ -21,7 +21,7 @@ $(document).ready(function(){
 
    
 
-    var topics = ["spinach", "carrot", "apple", "peppers", "broccoli", "peaches", "potatoes", "onion", "lime", "lemon", "lettuce", "cilantro", "cabbage"];
+    var topics = ["Spinach", "Carrot", "Apple", "Peppers", "Broccoli", "Peaches", "Potatoes", "Onion", "Lime", "Lemon", "Lettuce", "Cilantro", "Cabbage"];
     
     function displayGif(){  
         //event.preventDefault();
@@ -40,13 +40,14 @@ $(document).ready(function(){
         var results = response.data;
         
         for (var i = 0; i < results.length; i++){ 
-            var gifDiv = $("<div>");
-            var p = $("<p>").text("Rating: " + results[i].rating);
+            var gifDiv = $("<div class='image-container'>");
+            var p = $("<p class= 'rating'>").text("Rating: " + results[i].rating);
             
             var gifImage = $("<img>");
+
             gifImage.attr("src", results[i].images.fixed_height_still.url);
-            gifImage.attr("data-animate",results[i].images.fixed_height.url);
             gifImage.attr("data-still",results[i].images.fixed_height_still.url);
+            gifImage.attr("data-animate",results[i].images.fixed_height.url);
             gifImage.attr("data-state", "still");
             gifImage.attr("class","gifImage");
     
@@ -60,7 +61,7 @@ $(document).ready(function(){
              $(".gifImage").on("click",function(){
             
        
-             var gifState = $(this).attr("data-state")
+             var gifState = $(this).attr("data-state");
 
              if(gifState === "still"){
                  $(this).attr("src", $(this).attr("data-animate"));
@@ -71,8 +72,6 @@ $(document).ready(function(){
              }
              console.log(this);
              })
-
-        
         });
     };
 
