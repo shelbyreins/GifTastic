@@ -23,8 +23,8 @@ $(document).ready(function(){
 
     var topics = ["Spinach", "Carrot", "Apple", "Peppers", "Broccoli", "Peaches", "Potatoes", "Onion", "Lime", "Lemon", "Lettuce", "Cilantro", "Cabbage"];
     
-    function displayGif(){  
-        //event.preventDefault();
+    function displayGif(event){  
+        event.preventDefault();
         var object= $(this).attr("data-object");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + object +"&limit=10&api_key=lWEJ1fgqWyR2Aj8W27Ojvzxt2i6OApp5";
 
