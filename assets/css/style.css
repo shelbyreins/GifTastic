@@ -9,9 +9,17 @@ body{
     padding-top: 15px;
     text-align: center;
 }
+label{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 #gif-form{
     text-align: center;
+}
+
+#gif-input{
+    height: 25px;
+    width: 200px;
 }
 
 #add-gif{
@@ -24,10 +32,7 @@ body{
     letter-spacing: 1px;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 4px;
-   
-
-    
+    border-radius: 4px;    
 }
 
 .btn{
@@ -47,22 +52,21 @@ body{
 
 #button-view{
     text-align: center;
+    margin-bottom: 30px;
 }
 
-/* #gif-view{
+#gif-view{
     text-align: center;
-    float: left;
-} */
+}
 
 .image-container{
-    float:left;
+    display:inline-block;
     padding-left: 20px;
     padding-right: 20px;
-    /* text-align: center; */
+    padding-bottom: 20px;
 }
 
 .gifImage{
-    width: auto;
-    height: auto;
+    
     border-radius: 2px;
 }
