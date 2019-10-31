@@ -1,26 +1,5 @@
 $(document).ready(function(){
-
-// Make a array called with a variable topics
-// Attach the GIF source 
-// Ajax call the specific object
-// Add the rating
-// Generate new buttons from the search engine
-//For loop to loop through 10 GIF's with ratings
-// Append the GIF and the rating once the button is pressed
-
-//https://api.giphy.com/v1/gifs/search?q=cats&limit=10&api_key=lWEJ1fgqWyR2Aj8W27Ojvzxt2i6OApp5
-
-// add variable for these and onclick
-//
-// use data attributes
-    // var still = gifDiv.dataset.still;
-    // var animate = gifDiv.dataset.animate;
-    // var state = gifDiv.dataset.state;
-// for still image used fixed_height
-// for animated image use fixed_height_still
-
-   
-
+    
     var topics = ["Spinach", "Carrot", "Apple", "Peppers", "Broccoli", "Peaches", "Potatoes", "Onion", "Lime", "Lemon", "Lettuce", "Cilantro", "Cabbage"];
     
     function displayGif(event){  
@@ -84,6 +63,7 @@ $(document).ready(function(){
             newButton.attr("data-object", topics[i])
             newButton.text(topics[i]);
             $("#button-view").append(newButton);
+
             }
         }
         
