@@ -1,19 +1,19 @@
 
 
 .btn{
-    width: 10%;
-    padding: 12px;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    padding: 10px;
+     margin-left: 10px;
+     margin-bottom: 10px;  
     font-size: 1em;
-    background:rgba(38, 60, 29, 0.782);
+    background:rgba(105, 136, 92, 0.782);
     color:  rgb(250, 248, 248);
     font-family:Arial, Helvetica, sans-serif ;
     letter-spacing: 1px;
     font-weight: bold;
-
-
+    text-decoration: none;
+    border-radius: 4px;
 }
+
 
 
 .image-container{
