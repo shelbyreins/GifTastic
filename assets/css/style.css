@@ -23,25 +23,34 @@ body{
 }
 
 #gif-input{
-    height: 25px;
+    height: 27px;
     width: 200px;
 }
 
 #add-gif{
-    height: 30px;
-    font-size: .8em;
-    background:rgba(232, 227, 227, 0.782);
-    color:  rgb(0, 0, 0);
+    height: 32px;
+    font-size: 1em;
+    padding-left: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 12px;
+    background:rgb(213, 147, 33);
+    color:  rgb(250, 248, 248);
     font-family: 'Alegreya SC', serif;
     letter-spacing: 1px;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 4px;    
+    border-radius: 3px;  
+    border: none;
+}
+
+#add-gif:hover{
+    background:rgb(208, 172, 111);
 }
 
 #gif-input, #add-gif{
     margin-top: 18px;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 
 .btn{
@@ -55,6 +64,15 @@ body{
     letter-spacing: 1px;
     text-decoration: none;
     border-radius: 4px;
+    border: none;
+}
+
+.btn:hover{
+    background:rgb(90, 126, 187);
+}
+
+.btn:focus, #add-gif:focus{
+   outline: 0;
 }
 
 #button-view{
@@ -75,4 +93,10 @@ body{
 
 .gifImage{
     border-radius: 2px;
+}
+
+.rating{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
 }
