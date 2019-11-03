@@ -24,7 +24,6 @@ https://shelbyreins.github.io/GifTastic/
 - When the user clicks a button, 10 static, non-animated GIF's should appear
 - When user clicks on a still GIPHY image, the GIF will animate
 - Each GIF should include the rating
-- 
 
 ## Technologies Used
 
